@@ -2,11 +2,7 @@
 
 <br>
 
-# **프로젝트 명 : 투어 가이드** 📚
-
-<br>
-
-## 💡**팀명 : 관광해조**
+## 💡**팀명 : **
 
 <br>
 
@@ -26,13 +22,19 @@
 | 👩 김태연 | 👩 박지수 | 🧑 신승철 | 👨 이재은 | 👨 조해리 |
 |---|---|---|---|---|
 | <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common2.png" width="150" height="170"/> | <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common3.png" width="150" height="170"/> | <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common.png" width="150" height="170"/> | <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common5.png" width="150" height="170"/> | <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common4.jpg" width="150" height="170"/> |
-|[@songeeeey](https://github.com/songeeeey)|[@0lipa](https://github.com/0lipa)|[@SEHEE-8546](https://github.com/SEHEE-8546)|[@kimsehan11](https://github.com/kimsehan11)|[@Yangmin](https://github.com/Yangmin3)|
+|[@Taeyeon514](https://github.com/Taeyeon514)|[@0lipa](https://github.com/0lipa)|[@SEHEE-8546](https://github.com/SEHEE-8546)|[@JAEEUN0129](https://github.com/JAEEUN0129)|[@Haer111](https://github.com/Haer111)|
 
 <br>
 
 ---
 
 ## 1. 프로젝트 개요
+
+<br>
+
+## **프로젝트 명 : 투어 가이드** 📚
+
+<br>
 
 ### 1.1 프로젝트 주제 선정 배경
 <br>
@@ -94,7 +96,7 @@
 
 ---
 
-### 1.3 프로젝트 목적
+### 1.3 프로젝트 목표
 
 <br>
 
@@ -115,7 +117,7 @@
 
 
 
-## 2.  **기술 스택** 🛠️
+## 2.  **기술 스택 및 사용 모델** 🛠️
 
 | **분류**         | **기술/도구**                                                                            |
 |------------------|------------------------------------------------------------------------------------------|
@@ -123,9 +125,19 @@
 | **라이브러리**   | ![NumPy](https://img.shields.io/badge/numpy-013243?style=for-the-badge&logo=numpy) ![Pandas](https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas) ![Matplotlib](https://img.shields.io/badge/Matplotlib-ffffff?style=for-the-badge&logo=Matplotlib) <br> ![Seaborn](https://img.shields.io/badge/seaborn-0C5A5A?style=for-the-badge&logo=Seaborn) ![scikitlearn](https://img.shields.io/badge/scikitlearn-green?style=for-the-badge&logo=scikitlearnlogo=xgboost) ![imbalanced-learn](https://img.shields.io/badge/imbalanced--learn-FF6B6B?style=for-the-badge) ![Joblib](https://img.shields.io/badge/Joblib-2E8B57?style=for-the-badge)
 | **협업 툴**      | ![GitHub](https://img.shields.io/badge/github-121011?style=for-the-badge&logo=github) ![Git](https://img.shields.io/badge/git-F05033?style=for-the-badge&logo=git)|
 
+<br>
+
+## 사용 모델
+| **분류**         | **사용 모델**                                                                             |
+|------------------|-----------------------------------------------------------------------------------------|
+|  **임베딩 모델**     |  SentenceTransformer (all-MiniLM-L6-v2)                              |
+|  **LLM 모델**      |                  모델 이름                          |
+
 ---
 
-## 3. WBS 📋
+## 3. 시스템 아키텍처 
+
+### 이미지 사진 넣어야돼요
 
 <img src="./img/WBS.png" width=700/>
 
@@ -134,9 +146,20 @@
 
 ---
 
-## 4. 데이터 선택 및 특징 🗃️
+## 4. WBS
 
-### 4.1 데이터 선택
+### WBS 넣어야돼요
+
+---
+
+## 5. 요구사항 명세서
+
+---
+
+
+## 6. 수집 데이터 및 전처리
+
+### 6.1 수집한 데이터
 
 - 도서관 이용에 대한 설문지를 바탕으로 이용자의 인구통계학적 정보, 이용 패턴 등을 포함하고 있는 데이터 셋 활용
 
@@ -158,7 +181,7 @@
 
 ---
 
-### 4.2 데이터 특징
+### 6.2 데이터 특징
 
 <br>
 
@@ -176,24 +199,33 @@
 
 <br>
 
+### 6.3 데이터 전처리 요약
+
+
 ---
 
-## 5. 데이터 전처리 및 EDA 🖌️
+## 7. DB 연동 구현 코드
 
-### 5.1 데이터 전처리
+🔗 링크
 
-#### 5.1.1 결측치 처리
+---
+
+## 8. 테스트 계획 및 결과 보고서
+
+### 8.1 테스트 계획
 - `gender`, `age`, `education`, `income`, `experience`, `job`, `living_area`, `distance`, `future_use` 전부 결측치 없음.
 
   <img src="./img/결측치없음.png" width=300/> 
 
 
-#### 5.1.2 이상치 처리
+### 8.2 결과 보고서
 - `income` : 99 → 모름/무응답 제거
 
   <img src="./img/income.png" width=800/>
+---
+## 9. 진행과정 중 프로그램 개선 노력
 
-#### 5.1.3 지역 데이터 그룹화
+### 9.1 
 서울시 25개 구를 경제·상권 특성으로 3개 군집화
 - 기준: 거주지/소득과 도서관 이용률 간의 [상관관계](https://www.sisain.co.kr/news/articleView.html?idxno=47046)를 바탕으로
   - **Group_A**: 강남, 서초, 송파, 종로, 중구, 영등포, 용산
@@ -202,7 +234,10 @@
 
   <img src="./img/living_area_grouped.png" width=400/>
 
-#### 5.1.4 범주형 변수 재코딩
+---
+## 10.수행결과
+
+###
 
 **(1) 범주 병합**
 
