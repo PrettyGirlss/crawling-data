@@ -7,13 +7,16 @@ from langchain_core.documents import Document
 
 # 특수 문자와 각종 필요없는 글자들 제거하는 함수
 def remove_nonwords(text):
-    text = text.replace(':)',"")    # :) 제거
-    text = text.replace('\n더보기','')      # \n 더보기, \n 닫기, \n 제거
-    text = text.replace('\n닫기','')
-    text = text.replace('\r\n',' ')
-    text = text.replace('\n',' ')
-    text = text.replace('\r', ' ')
-    text = re.sub('[^a-zA-Z가-힣\'"· 0-9.,()㎡[0-9]~[0-9]]','',text) # 숫자와 숫자 사이에 있는 ~ 남겨야함
+    try: 
+        text = text.replace(':)',"")    # :) 제거
+        text = text.replace('\n더보기','')      # \n 더보기, \n 닫기, \n 제거
+        text = text.replace('\n닫기','')
+        text = text.replace('\r\n',' ')
+        text = text.replace('\n',' ')
+        text = text.replace('\r', ' ')
+        text = re.sub('[^a-zA-Z가-힣\'"· 0-9.,()㎡[0-9]~[0-9]]','',text) # 숫자와 숫자 사이에 있는 ~ 남겨야함
+    except:
+        pass
     return text     # 제거한 텍스트 반환
 
 
