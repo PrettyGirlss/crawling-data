@@ -68,8 +68,7 @@ def make_csv_to_documents_sep(file_path):
 def make_csv_to_documents_with(file_path):
     data = []
     new_df = pd.read_csv(file_path)
-    # new_df.drop('Unnamed: 0',axis=1,inplace=True)             # 혹시 컬럼에 Unnamed: 0 있으면 제거하는 코드
-
+    
     for idx in range(len(new_df)):
         location_data = {}
         meta_data = {}
@@ -77,19 +76,28 @@ def make_csv_to_documents_with(file_path):
 
         for col in list(row.index):
             if col == 'info':
-                location_data['description']= row['info']
+                location_data['description'] = row['info']
             elif col == 'review':
-                if len(row['review'])<10:       # 10글자 미만이면 아예 삭제
+                if len(row['review']) < 10:  # 10글자 미만이면 아예 삭제
                     location_data['review'] = ''
                 else:
                     row['review'] = remove_nonwords(row['review'])
                     location_data['review'] = row['review']
             else:
-                row[col] = row[col].replace('\r\n',' ')
-                row[col] = row[col].replace('\n', ' ')
-                row[col] = row[col].replace('\r',' ')
+                # 숫자나 NaN이 아니라 문자열인 경우에만 replace 수행
+                if isinstance(row[col], str):  # 문자열인 경우만 처리
+                    row[col] = row[col].replace('\r\n', ' ')
+                    row[col] = row[col].replace('\n', ' ')
+                    row[col] = row[col].replace('\r', ' ')
+                elif pd.notna(row[col]):  # NaN이 아닌 경우 숫자일 수 있음
+                    row[col] = str(row[col])  # 숫자나 NaN을 문자열로 변환
+                    row[col] = row[col].replace('\r\n', ' ')
+                    row[col] = row[col].replace('\n', ' ')
+                    row[col] = row[col].replace('\r', ' ')
+
                 meta_data[col] = row[col]
-        if 'review' not in list(row.index):           # 리뷰가 아예 없어서 row에 없으면 
+
+        if 'review' not in list(row.index):  # 리뷰가 아예 없어서 row에 없으면
             location_data['review'] = ''
         if 'info' not in list(row.index):
             location_data['description'] = ''
