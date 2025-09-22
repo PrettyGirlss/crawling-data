@@ -30,14 +30,15 @@ def make_csv_to_documents_sep(file_path):
 
         for col in list(row.index):
             if col == 'info':
-                location_data['description']= row['info']
+                modified_info = remove_nonwords(row['info'])
+                location_data['description']= modified_info
                 
             elif col == 'review':
                 if len(row['review'])<10:       # 10글자 미만이면 아예 삭제
                     location_data['review'] = ''
                 else:
-                    row['review'] = remove_nonwords(row['review'])
-                    location_data['review'] = row['review']
+                    modified_review = remove_nonwords(row['review'])
+                    location_data['review'] = modified_review
             else:
                 row[col] = row[col].replace('\r\n',' ')
                 row[col] = row[col].replace('\n', ' ')
