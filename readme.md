@@ -148,7 +148,9 @@
 
 ## 4. WBS
 
-### WBS 넣어야돼요
+		
+<img width="964" height="409" alt="image" src="https://github.com/user-attachments/assets/ad3d9aa7-c324-4c11-9da6-90727d9254c2" />
+
 
 ---
 
