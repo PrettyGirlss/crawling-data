@@ -19,10 +19,10 @@
 
 <br>
 
-| 👩 김태연 | 👩 박지수 | 🧑 신승철 | 👨 이재은 | 👨 조해리 |
+| 👩 김태연 | 👩 박지수 | 🧑 신승철 | 👩 이재은 | 👩 조해리 |
 |---|---|---|---|---|
 | <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common2.png" width="150" height="170"/> | <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common3.png" width="150" height="170"/> | <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common.png" width="150" height="170"/> | <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common5.png" width="150" height="170"/> | <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common4.jpg" width="150" height="170"/> |
-|[@Taeyeon514](https://github.com/Taeyeon514)|[@0lipa](https://github.com/0lipa)|[@SEHEE-8546](https://github.com/SEHEE-8546)|[@JAEEUN0129](https://github.com/JAEEUN0129)|[@Haer111](https://github.com/Haer111)|
+|[@Taeyeon514](https://github.com/Taeyeon514)|[@0lipa](https://github.com/0lipa)|[@ssshinnpson](https://github.com/ssshinnpson)|[@JAEEUN0129](https://github.com/JAEEUN0129)|[@Haer111](https://github.com/Haer111)|
 
 <br>
 
