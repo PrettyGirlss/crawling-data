@@ -26,7 +26,6 @@ def remove_nonwords(text):
 def make_csv_to_documents_sep(file_path):
     data = []
     new_df = pd.read_csv(file_path)
-    # new_df.drop('Unnamed: 0',axis=1,inplace=True)     혹시 컬럼에 Unnamed: 0 있으면 제거하는 코드
 
     for idx in range(len(new_df)):
         location_data = {}
@@ -45,10 +44,10 @@ def make_csv_to_documents_sep(file_path):
                     modified_review = remove_nonwords(row['review'])
                     location_data['review'] = modified_review
             else:
-                row[col] = row[col].replace('\r\n',' ')
-                row[col] = row[col].replace('\n', ' ')
-                row[col] = row[col].replace('\r',' ')
-                meta_data[col] = row[col]
+                modified_data = row[col].replace('\r\n',' ')
+                modified_data = modified_data.replace('\n', ' ')
+                modified_data = modified_data.replace('\r',' ')
+                meta_data[col] = modified_data
         if 'review' not in list(row.index):           # 리뷰랑 info가 row.index에 없으면 review 항목과 description 항목 추가
             location_data['review'] = ''
         if 'info' not in list(row.index):
@@ -113,3 +112,32 @@ def make_csv_to_documents_with(file_path):
         ))
 
     return data
+
+
+# 태그만 page_content에 넣어주는 경우
+def make_tag_page_content(file_path):
+    data = []
+    new_df = pd.read_csv(file_path)
+
+    for idx in range(len(new_df)):
+        tag_data = ''
+        meta_data = {}
+        row = new_df.iloc[idx][new_df.iloc[idx].notna()]
+
+        for col in list(row.index):     # None이 아닌 컬럼들 == row.index 
+            if col == '태그':
+                if row[col] is not None:
+                    tag_data = row[col]
+            else:
+                modified_data = row[col].replace('\r\n',' ')
+                modified_data = modified_data.replace('\n', ' ')
+                modified_data = modified_data.replace('\r',' ')
+                meta_data[col] = modified_data
+
+        data.append(Document(
+            page_content=tag_data,
+            metadata=meta_data
+        ))
+
+    return data
+
