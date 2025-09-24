@@ -10,7 +10,6 @@ def remove_nonwords(text):
     if type(text)!= float :
         text = text.replace(':)',"")    # :) 제거
         text = text.replace("※","")
-        text = text.replace('-','')
         text = text.replace('\n더보기','')      # \n 더보기, \n 닫기, \n 제거
         text = text.replace('\n닫기','')
         text = text.replace('\r\n',' ')
@@ -114,7 +113,7 @@ def make_csv_to_documents_with(file_path):
     return data
 
 
-# 태그만 page_content에 넣어주는 경우
+# 태그만 page_content에 넣어주는 경우  이거 쓰세요!!!!!
 def make_tag_page_content(file_path):
     data = []
     new_df = pd.read_csv(file_path)
