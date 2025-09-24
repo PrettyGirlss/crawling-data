@@ -141,3 +141,29 @@ def make_tag_page_content(file_path):
 
     return data
 
+# 태그와 짤막한 설명을 같이 page_content에 넣어주는 경우
+def make_tag_page_content(file_path):
+    data = []
+    new_df = pd.read_csv(file_path)
+
+    for idx in range(len(new_df)):
+        content_data = ''
+        meta_data = {}
+        row = new_df.iloc[idx][new_df.iloc[idx].notna()]
+
+        for col in list(row.index):     # None이 아닌 컬럼들 == row.index 
+            if col == '태그' or col == 'short_info':
+                if row[col] is not None:
+                    content_data += row[col].strip() + " "
+            else:
+                modified_data = row[col].replace('\r\n',' ')
+                modified_data = modified_data.replace('\n', ' ')
+                modified_data = modified_data.replace('\r',' ')
+                meta_data[col] = modified_data
+
+        data.append(Document(
+            page_content=content_data.strip(),
+            metadata=meta_data
+        ))
+
+    return data
